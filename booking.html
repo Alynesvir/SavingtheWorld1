@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <meta charset="UTF-8">
     <title>bookings</title>
 </head>
 <body>
     <form action="{{url_for('booking')}}" method="post">
-        <table>
+        <table border="black">
           {% for name in name_lst %}
           <tr>
               <td>{{name}}</td> <td><input type="radio" name="booking" value="{{name}}"></td>
@@ -14,13 +15,18 @@
           {% endfor %}
         </table>
         <input type="submit">
-        <a href="{{url_for('index')}}">return</a>
+        <a href="{{url_for('index')}}">Return</a>
     </form>
-    {% for booking in selected_booking %}
-    <ol>
-        <lh>names</lh>
-        <li> {{booking[0]}} </li>
-    </ol>
-    {% endfor %}
+    <br><br>
+
+    <table style="width:100%">
+        <tr><td>Name:</td> <td>Email:</td> <td>Venue:</td> <td>Timeslot:</td></tr>
+        {% for booking in selected_booking %}
+        <tr>
+        <td> {{booking[0]}} </td> <td> {{booking[1]}} </td> <td> {{booking[2]}} </td> <td> {{booking[3]}} </td>
+        </tr>
+        {% endfor %}
+    </table>
+
 </body>
 </html>
