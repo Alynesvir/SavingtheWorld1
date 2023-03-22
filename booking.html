@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bookings</title>
+</head>
+<body>
+    <form action="{{url_for('booking')}}" method="post">
+        <table>
+          {% for name in name_lst %}
+          <tr>
+              <td>{{name}}</td> <td><input type="radio" name="booking" value="{{name}}"></td>
+          </tr>
+          {% endfor %}
+        </table>
+        <input type="submit">
+        <a href="{{url_for('index')}}">return</a>
+    </form>
+    {% for booking in selected_booking %}
+    <ol>
+        <lh>names</lh>
+        <li> {{booking[0]}} </li>
+    </ol>
+    {% endfor %}
+</body>
+</html>
