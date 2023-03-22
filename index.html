@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+    {{ error }}
+    <div>
+        <form action="{{url_for('index')}}" method="post">
+            <table border="black">
+                {% for entry in lst %}
+                <tr>
+                    <td>{{entry[0]}}</td> <td>{{entry[1]}} / {{entry[2]}}</td>
+                   <td><input type="radio" name="choice" value="{{entry[0]}}"></td> <!-- doesn't return value to the server side -->
+                </tr>
+                {% endfor %}
+            </table>
+            <br>
+            name:<input type="text" name="name">
+            <br>
+            <a href="{{url_for('booking')}}">booking</a>
+            <input type="submit">
+        </form>
+   </div>
+</body>
+</html>
