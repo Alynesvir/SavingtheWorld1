@@ -1,0 +1,6 @@
+indoor basketball court,0,10
+outdoor basketball court,0,10
+school hall,0,20
+gym,0,15
+sports hall,0,20
+running track,0,5
