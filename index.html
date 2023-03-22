@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <meta charset="UTF-8">
     <title>index</title>
 </head>
 <body>
+  <img width=20% height=20% src="https://asrjc.moe.edu.sg/wp-content/uploads/2018/09/Master-Vertical-Logo-centre-reduced.png" alt="ASRJC Logo"/>
+  <h1>ASRJC Exercise Venue Booking</h1>
     {{ error }}
     <div>
         <form action="{{url_for('index')}}" method="post">
@@ -17,11 +20,20 @@
                 {% endfor %}
             </table>
             <br>
-            name:<input type="text" name="name">
+            Name:<input type="text" name="name">
+            Email:<input type="email" name="email">
+            <select name="timeslot">
+                <option value="1">2pm to 3pm</option>
+                <option value="2">3pm to 4pm</option>
+                <option value="3">4pm to 5pm</option>
+                <option value="4">5pm to 6pm</option>
+            </select>
             <br>
-            <a href="{{url_for('booking')}}">booking</a>
+            <a href="{{url_for('booking')}}">Booking</a>
             <input type="submit">
         </form>
    </div>
+  <br><br><br><br><br><br><br><br><br><br><br>
+  <a style="color: lightskyblue;" href="https://media.discordapp.net/attachments/1083374729282469969/1088160382524334160/FB_IMG_1630605088514.jpg?width=331&height=580"><p style="color: lightskyblue;">Easter Egg!</p></a>
 </body>
 </html>
